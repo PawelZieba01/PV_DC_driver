@@ -34,26 +34,18 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
 
 #### Obudowa
 
-Puszka hermetyczna ZP180.120.90JPH TM ABS-PC KRADEX 
-https://www.tme.eu/pl/details/zp18012090jphabspc/obudowy-uniwersalne/kradex/zp180-120-90jph-tm-abs-pc/
-
-Radiator aluminiowy 15 x 6 x 2,5 cm 
-https://allegro.pl/oferta/radiator-aluminiowy-15cm-x-6cm-x-2-5cm-11937266831
-
-Przycisk okrągły ON
-https://allegro.pl/oferta/przycisk-okragly-on-czarny-2szt-9860564576
-
-Złącze GX12 wtyk + gniazdo
-https://allegro.pl/oferta/zlacze-gx12-wtyk-gniazdo-3pin-9397493877
-
-Dławica kablowa Ergom E03DK-01030100501
-https://allegro.pl/oferta/dlawnica-kablowa-izolacyjna-typu-dp16-gwint-pg16-12284635963
-
-GNIAZDO zasilające DC 2,1/5,5mm
-https://allegro.pl/oferta/gniazdo-zasilajace-dc-2-1-5-5mm-12119051427
-
-Przełącznik SCI PS507A-BB
-https://allegro.pl/oferta/przelacznik-przyciskowy-off-on-3a-250v-16mm-19mm-10801463125
+- [Puszka hermetyczna ZP180.120.90JPH TM ABS-PC KRADEX](https://www.tme.eu/pl/details/zp18012090jphabspc/obudowy-uniwersalne/kradex/zp180-120-90jph-tm-abs-pc/) 
+  - [Wymiary](https://www.tme.eu/Document/8d2ba81ba6f96d3e10d633a5750ea60b/ZJ-SERIES-7-en.pdf)
+- [Radiator aluminiowy 150 x 50 x 25 mm](https://allegro.pl/oferta/radiator-p52317-50x150x25mm-2-0k-w-7556032694)
+  - Rezystancja termiczna: 2 K/W
+- [Przycisk okrągły monostabilny ](https://allegro.pl/oferta/przelacznik-przyciskowy-metalowy-off-on-2a-250v-8948529496?navCategoryId=67327) 
+- [Złącze GX12 wtyk + gniazdo](https://allegro.pl/oferta/zlacze-3-pin-0-5mm2-5a-connfly-12125987887) 
+- [Dławica kablowa Ergom E03DK-01030100501](https://allegro.pl/oferta/dlawnica-kablowa-izolacyjna-typu-dp16-gwint-pg16-12284635963) 
+- [GNIAZDO zasilające DC 2,1/5,5mm](https://allegro.pl/oferta/gniazdo-zasilajace-dc-2-1-5-5mm-12119051427)
+- [Przełącznik z podświetleniem ](https://allegro.pl/oferta/przelacznik-przyciskowy-1-5a-250v-led-16mm-25mm-9974867048?navCategoryId=67327)
+- [Wyświetlacz LCD 16x2 z konwerterem i2c](https://allegro.pl/oferta/wyswietlacz-lcd1602-i2c-konwerter-lcd-niebieski-10014289511?snapshot=MjAyMi0wNi0yOFQxMDozODowNS4zNjZaO2J1eWVyO2Q5Mzg5MWUyMmQ2OGYwMDFlNmVlZDA2OTFhNWRmMzUxMjM0MmYxODE0MmFjZmZjNzY5MzFhMWMwMDJjODUxYmQ%3D)
+  - [Dokumentacja i wymiary](https://www.sparkfun.com/datasheets/LCD/ADM1602K-NSW-FBS-3.3v.pdf)
+- [Buzzer 12V](https://allegro.pl/oferta/buzzer-buzer-z-generatorem-9-15v-85-db-8371845445)
 
 #### Sterowanie grzałką MPPT
 
