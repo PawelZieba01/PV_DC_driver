@@ -34,6 +34,21 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
 
 #### Obudowa
 
+Puszka hermetyczna ZP180.120.90JPH TM ABS-PC KRADEX 
+https://www.tme.eu/pl/details/zp18012090jphabspc/obudowy-uniwersalne/kradex/zp180-120-90jph-tm-abs-pc/
+
+Radiator aluminiowy 15 x 6 x 2,5 cm 
+https://allegro.pl/oferta/radiator-aluminiowy-15cm-x-6cm-x-2-5cm-11937266831
+
+Przycisk okrągły ON
+https://allegro.pl/oferta/przycisk-okragly-on-czarny-2szt-9860564576
+
+Złącze GX12 wtyk + gniazdo
+https://allegro.pl/oferta/zlacze-gx12-wtyk-gniazdo-3pin-9397493877
+
+Dławica kablowa Ergom E03DK-01030100501
+https://allegro.pl/oferta/dlawnica-kablowa-izolacyjna-typu-dp16-gwint-pg16-12284635963
+
 #### Sterowanie grzałką MPPT
 
 #### Pomiar napięcia
