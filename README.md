@@ -52,6 +52,9 @@ https://allegro.pl/oferta/dlawnica-kablowa-izolacyjna-typu-dp16-gwint-pg16-12284
 GNIAZDO zasilające DC 2,1/5,5mm
 https://allegro.pl/oferta/gniazdo-zasilajace-dc-2-1-5-5mm-12119051427
 
+Przełącznik SCI PS507A-BB
+https://allegro.pl/oferta/przelacznik-przyciskowy-off-on-3a-250v-16mm-19mm-10801463125
+
 #### Sterowanie grzałką MPPT
 
 #### Pomiar napięcia
