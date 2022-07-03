@@ -49,6 +49,9 @@ https://allegro.pl/oferta/zlacze-gx12-wtyk-gniazdo-3pin-9397493877
 Dławica kablowa Ergom E03DK-01030100501
 https://allegro.pl/oferta/dlawnica-kablowa-izolacyjna-typu-dp16-gwint-pg16-12284635963
 
+GNIAZDO zasilające DC 2,1/5,5mm
+https://allegro.pl/oferta/gniazdo-zasilajace-dc-2-1-5-5mm-12119051427
+
 #### Sterowanie grzałką MPPT
 
 #### Pomiar napięcia
