@@ -88,7 +88,7 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
 - Filtr RC low-pass o fg=8.84Hz.
 - Dla wejściowego napięcia Uwe=250V napięcie wyjściowe wynosi Uwy=3.29V (wg. symulacji)
 
-## *Testy w rzeczywistości*
+### *Testy w rzeczywistości*
 
 Tutaj trzeba napisać coś mądrego o tym jak się zachowuje układ pomiarowy w rzeczywistości.
 - Jakie są odczyty z ESP32, a jakie z multimetru? (sprawdzić czy multimetr daje radę przy f=10kHz)
@@ -107,7 +107,7 @@ Filtr RC
   - [Link do sklepu](https://botland.com.pl/czujniki-pradu/14275-czujnik-pradu-acs712-20a-5903351242103.html)
 - **Dopóki nie ustalimy jak czujnik zachowuje się przy sygnale PWM (f=10kHz), zostajemy przy pomiarze za pomocą peak-detector'a**
 
-## *Testy w rzeczywistości*
+### *Testy w rzeczywistości*
 
 Tutaj trzeba napisać coś mądrego o tym jak się zachowuje układ pomiarowy w rzeczywistości.
 - Jakie są odczyty z ESP32, a jakie z multimetru? (sprawdzić czy multimetr daje radę przy f=10kHz)
