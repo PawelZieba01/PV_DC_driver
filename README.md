@@ -1,4 +1,4 @@
-# PV_DC_driver  
+# PV_DC_driver
 
 Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wyprowadzeń wzorów
 
@@ -11,8 +11,9 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
   7. [Sterowanie](#sterowanie)
 
 
+***
 
-#### Funkcjonalności
+## **Funkcjonalności**
 
 - Sterowanie grzałką (włącz / wyłacz) --> MPPT PWM
 - Pomiar napięcia
@@ -31,8 +32,11 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
 - Zapis i wizualizacja danych na serwerze
 - Hermetyczna obudowa
 
+***
 
-#### Obudowa
+## **Obudowa**
+
+![Obudowa](images/PV_DC_DRIVER_CASE_v7.png "Obudowa")
 
 - [Puszka hermetyczna ZP180.120.90JPH TM ABS-PC KRADEX](https://www.tme.eu/pl/details/zp18012090jphabspc/obudowy-uniwersalne/kradex/zp180-120-90jph-tm-abs-pc/) 
   - [Wymiary](https://www.tme.eu/Document/8d2ba81ba6f96d3e10d633a5750ea60b/ZJ-SERIES-7-en.pdf)
@@ -69,12 +73,50 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
   - Średnica: 12mm
   - Wysokość: 9,5mm
 
-#### Sterowanie grzałką MPPT
+***
 
-#### Pomiar napięcia
+## **Sterowanie grzałką MPPT**
 
-#### Pomiar prądu
+***
 
-#### Pomiar Temperatury
+## **Pomiar napięcia**
 
-#### Sterowanie
+![Voltage measure](images/Voltage_measurement.png "Pomiar napięcia")
+
+- Pomiar napięcia na panelu (kondensatorze buforującym) za pomocą dzielnika napięcia (1:76)
+- Wzmacniacz typu RAIL-TO-RAIL w roli bufora napięciowego 
+- Filtr RC low-pass o fg=8.84Hz.
+- Dla wejściowego napięcia Uwe=250V napięcie wyjściowe wynosi Uwy=3.29V (wg. symulacji)
+
+## *Testy w rzeczywistości*
+
+Tutaj trzeba napisać coś mądrego o tym jak się zachowuje układ pomiarowy w rzeczywistości.
+- Jakie są odczyty z ESP32, a jakie z multimetru? (sprawdzić czy multimetr daje radę przy f=10kHz)
+
+***
+
+## **Pomiar prądu**
+
+Peak-detector   
+![Current measure](images/Current_measurement_PD.png "Pomiar prądu")
+
+Filtr RC   
+![Current measure](images/Current_measurement_RC.png "Pomiar prądu")
+
+- Do pomiaru prądu wykorzystujemy czujnik [ACS712](https://www.sparkfun.com/datasheets/BreakoutBoards/0712.pdf)
+  - [Link do sklepu](https://botland.com.pl/czujniki-pradu/14275-czujnik-pradu-acs712-20a-5903351242103.html)
+- **Dopóki nie ustalimy jak czujnik zachowuje się przy sygnale PWM (f=10kHz), zostajemy przy pomiarze za pomocą peak-detector'a**
+
+## *Testy w rzeczywistości*
+
+Tutaj trzeba napisać coś mądrego o tym jak się zachowuje układ pomiarowy w rzeczywistości.
+- Jakie są odczyty z ESP32, a jakie z multimetru? (sprawdzić czy multimetr daje radę przy f=10kHz)
+- Przetestować oba układy i je porównać
+
+***
+
+## **Pomiar Temperatury**
+
+***
+
+## **Sterowanie**
