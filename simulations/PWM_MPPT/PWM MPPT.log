@@ -3,7 +3,9 @@ Circuit: * D:\MojePliki\Git\PV_DC_driver\simulations\PWM_MPPT\PWM MPPT.asc
 WARNING: Node NC_02 is floating.
 WARNING: Node NC_03 is floating.
 WARNING: Node NC_04 is floating.
-WARNING: Node NC_06 is floating.
+ERROR: Node NC_08 is floating and connected to current source I:U2:Q
+ERROR: Node NC_09 is floating and connected to current source I:U2:Q
+WARNING: Node NC_11 is floating.
 
 WARNING: Less than two connections to node NC_01.  This node is used by S2.
 WARNING: Less than two connections to node NC_02.  This node is used by S2.
@@ -12,52 +14,54 @@ WARNING: Less than two connections to node NC_04.  This node is used by S2.
 WARNING: Less than two connections to node N019.  This node is used by R1.
 WARNING: Less than two connections to node NC_05.  This node is used by V1.
 WARNING: Less than two connections to node N011.  This node is used by R9.
-WARNING: Less than two connections to node NC_06.  This node is used by R13.
+WARNING: Less than two connections to node NC_10.  This node is used by V:U2:IMON.
+WARNING: Less than two connections to node NC_11.  This node is used by R13.
+WARNING: Less than two connections to node NC_12.  This node is used by D6.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
 Starting Gmin stepping
-Increasing initial diagonal Gmin to 100
-Increasing initial diagonal Gmin to 1000
-Gmin = 1000
-Gmin = 107.374
-Gmin = 11.5292
-Gmin = 1.23794
-Gmin = 0.132923
-Gmin = 0.0142725
-Gmin = 0.0015325
-Gmin = 0.00016455
-Gmin = 1.76685e-005
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
 vernier = 0.5
-Gmin = 3.29364e-006
-vernier = 0.666667
-Gmin = 8.15428e-007
-vernier = 0.888888
+vernier = 0.25
+Gmin = 3.78103e-006
+vernier = 0.333333
+Gmin = 1.83536e-006
+vernier = 0.444444
+vernier = 0.592592
+Gmin = 5.61288e-007
+vernier = 0.790123
 vernier = 1
-Gmin = 1.00195e-007
-Gmin = 1.07583e-008
-Gmin = 1.15517e-009
-Gmin = 1.24035e-010
-Gmin = 1.33182e-011
-Gmin = 1.43003e-012
-Gmin = 1.53548e-013
+Gmin = 9.23953e-008
+Gmin = 9.92087e-009
+Gmin = 1.06525e-009
+Gmin = 1.1438e-010
+Gmin = 1.22814e-011
+Gmin = 1.31871e-012
+Gmin = 1.41595e-013
 Gmin = 0
 Gmin stepping succeeded in finding the operating point.
 
 
-Date: Sat Jul 09 15:28:22 2022
-Total elapsed time: 8.910 seconds.
+Date: Tue Aug 02 19:42:39 2022
+Total elapsed time: 7.058 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 393230
-traniter = 392258
-tranpoints = 121826
-accept = 88715
-rejected = 33111
-matrix size = 145
-fillins = 230
+totiter = 292373
+traniter = 291366
+tranpoints = 87894
+accept = 66022
+rejected = 21872
+matrix size = 151
+fillins = 229
 solver = Normal
-Thread vector: 19.3/9.1[6] 9.5/4.3[6] 7.6/2.8[6] 0.7/1.8[1]  2592/500
-Matrix Compiler1: 25.11 KB object code size  9.3/6.0/[1.0]
-Matrix Compiler2: 16.55 KB object code size  1.5/2.9/[0.8]
+Thread vector: 20.9/9.8[6] 12.7/4.0[6] 5.0/3.6[6] 0.7/1.5[1]  2592/500
+Matrix Compiler1: 25.41 KB object code size  9.4/6.3/[2.6]
+Matrix Compiler2: 16.91 KB object code size  2.4/3.2/[0.9]
 

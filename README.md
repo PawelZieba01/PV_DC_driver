@@ -40,82 +40,130 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
 
 - [Puszka hermetyczna ZP180.120.90JPH TM ABS-PC KRADEX](https://www.tme.eu/pl/details/zp18012090jphabspc/obudowy-uniwersalne/kradex/zp180-120-90jph-tm-abs-pc/) 
   - [Wymiary](https://www.tme.eu/Document/8d2ba81ba6f96d3e10d633a5750ea60b/ZJ-SERIES-7-en.pdf)
-- [Radiator aluminiowy](https://allegro.pl/oferta/radiator-p52317-50x150x25mm-2-0k-w-7556032694)
+- [Radiator aluminiowy](https://www.tme.eu/pl/details/rad-a52317_50/radiatory/stonecold/)
   - Rezystancja termiczna: 2 K/W
   - Wymiary: 150 x 50 x 25 mm
-- [Przycisk okrągły monostabilny ](https://allegro.pl/oferta/przelacznik-przyciskowy-metalowy-off-on-2a-250v-8948529496?navCategoryId=67327) 
+- [Przycisk okrągły monostabilny ](https://www.tme.eu/pl/details/ps26bbk/przelaczniki-standardowe/ninigi/) 
   - 250V / 2A
   - Podświetlenie LED 2V
   - Otwór montażowy: 16mm
   - Głębokość montażu 20mm
   - Monostabilny
-- [Złącze GX12 wtyk + gniazdo](https://allegro.pl/oferta/zlacze-3-pin-0-5mm2-5a-connfly-12125987887) 
+- [Złącze mikrofonowe GX12 wtyk + gniazdo](https://www.tme.eu/pl/details/ds1110-01-3b6/zlacza-mikrofonowe/connfly/) 
   - Otwór montażowy: 12mm
-- [Dławica kablowa Ergom E03DK-01030100501](https://allegro.pl/oferta/dlawnica-kablowa-izolacyjna-typu-dp16-gwint-pg16-12284635963) 
+- [Dławica kablowa PG16](https://www.tme.eu/pl/details/helu-99304/dlawnice/helukabel/ht-pg-16-ral7035/) 
   - Typ: PG16
-- [GNIAZDO zasilające DC 2,1/5,5mm](https://allegro.pl/oferta/gniazdo-zasilajace-dc-2-1-5-5mm-12119051427)
+- [GNIAZDO zasilające DC 2,1/5,5mm](https://www.tme.eu/pl/details/1614-09/zlacza-dc/lumberg/1614-09/)
   - Średnica wewnętrzna styku: 2,1mm
   - Średnica zewnętrzna styku: 5,5mm
   - Otwór montażowy: 8mm
-- [Przełącznik z podświetleniem ](https://allegro.pl/oferta/przelacznik-przyciskowy-1-5a-250v-led-16mm-25mm-9974867048?navCategoryId=67327)
+- [Przełącznik z podświetleniem ](https://www.tme.eu/pl/details/r13508bl05brl1/przelaczniki-standardowe/sci/r13-508bl-05-br-l-1/)
   - 250V / 1,5A
   - Podświetlenie LED 2V
   - Otwór montażowy: 16mm
   - Głębokość montażu 25mm
   - Bistabilny
   - [Dokumentacja i wymiary](https://www.tme.eu/Document/587ccce62205a97d234f253cf2faa9ea/r13-508.pdf)
-- [Wyświetlacz LCD 16x2 z konwerterem i2c](https://allegro.pl/oferta/wyswietlacz-lcd1602-i2c-konwerter-lcd-niebieski-10014289511?snapshot=MjAyMi0wNi0yOFQxMDozODowNS4zNjZaO2J1eWVyO2Q5Mzg5MWUyMmQ2OGYwMDFlNmVlZDA2OTFhNWRmMzUxMjM0MmYxODE0MmFjZmZjNzY5MzFhMWMwMDJjODUxYmQ%3D)
+- [Wyświetlacz LCD 16x2 z konwerterem i2c](https://www.tme.eu/pl/details/lcd1602/akcesoria-do-zestawow-uruchomieniowych/kamami/)
   - Sterownik: HD44780
-  - Konwerter i2c: PCF8574
+  - [Konwerter i2c: PCF8574](https://www.tme.eu/pl/details/oky3437/moduly-pozostale/okystar/)
   - [Dokumentacja i wymiary](https://www.sparkfun.com/datasheets/LCD/ADM1602K-NSW-FBS-3.3v.pdf)
-- [Buzzer 12V](https://allegro.pl/oferta/buzzer-buzer-z-generatorem-9-15v-85-db-8371845445)
+- [Buzzer 12V](https://www.tme.eu/pl/details/bmt-1212ux/sygnalizatory-elektromag-z-generatorem/bestar/bmt1212ux/)
   - Zasilanie 9-15V
   - Średnica: 12mm
-  - Wysokość: 9,5mm
+  - Wysokość: 7,5mm
 
 ***
 
 ## **Sterowanie grzałką MPPT**
 
+![PV characteristics](images/PV_characteristics.png "Charakterystyki paneli PV")
+
+Panel PV w pewnym zakresie zachowuje się jak źródło prądowe.
+Przy zbyt dużym obciążeniu maleje napięcie i co za tym idzie również moc.
+Przy za małym obciążeniu wzrasta napięcie ale maleje prąd, więc również moc.
+Trzeba więc tak dostosować obciążenie, żeby wykorzystywana była maksymalna moc paneli w danym momencie.
+Nie możemy regulować rezystancji grzałki która jest 'stała', więc musimy regulować prąd.
+Profesjonalne falowniki wykorzystują do tego celu przetwornice impulsowe, dzięki którym można regulować napięcie na obciążeniu (w ten sposób również prąd).
+Niestety przetwornica o mocy ok 2kW jest zbyt skomplikowana i korzyści z jej zastoswania w naszym projekcie są niewymierne względem czasu i nakładu pracy.
+My wykorzystamy sterowanie PWM.
+
+#### Poglądowy układ sterowania grzałką
+
+![MPPT heater driver](images/MPPT_heater_driver.png "Sterowanie grzałką - MPPT")
+
+![MPPT simulation](images/MPPT_capacitor_simulation.png "Symulacja zachowania baterii kondensatorów - MPPT")
+
+- Współczynnik wypełnienienia PWM: 70%
+- Prąd paneli: 7A
+- Rezystancja grzałki: 17,63Ohm
+
+Klucz tranzystorowy będzie przełączał z częstotliwością 10kHz obciążenie, dzięki temu regulując wypełnienie przebiegu prostokątnego będziemy mogli regulować średni prąd płynący przez grzałkę.
+Aby zmiany napięcia na panelach PV nie podążały za zmianami napięcia przebiegu PWM trzeba użyć baterii kondensatorów w roli bufora energii.
+Gdy grzałka będzie wyłączona, energia z paneli zostanie zgromadzona w kondensatorach (panele doładują kondensatory do ich napięcia).
+W momencie włączenia grzałki, kondensatory dostarczą dodatkowy prąd a ich napięcie gwałtownie nie spadnie.
+W ten sposób regulować możemy średni prąd obciążenia i średnie napięcie paneli PV.   
+
+Dzięki pomiarom napięcia i prądu poznamy moc z jaką pracuje grzałka. Do szukania optymalnego punktu pracy układu wykorzystamy algorytm napisany w języku Python.   
+
+- Klucz tranzystorowy
+  - Dwa równolegle połączone tranzystory N-mosfet [WMJ25N80M3](https://www.tme.eu/pl/details/wmj25n80m3-cyg/tranzystory-z-kanalem-n-tht/wayon/wmj25n80m3/)
+  - Izolacja galwaniczna za pomocą transoptora
+  - Napięcie sterowania 12V
+
 ***
 
 ## **Pomiar napięcia**
 
+#### Charakterystyka przetwornika ADC w ESP32
+![ADC characteristic](images/ESP32_ADC_characteristic.png "Charakterystyka ADC w ESP32")
+
+Przetwornik ADC w ESP32 nie jest liniowy. Doświadczalnie ustalono, że do wyniku pomiaru należy dodać 130mV (działa w zakresie 130mV - 2500mV)   
+**Należy wykonać kalibrację przetwornika ADC!!!**   
+
+#### Układ pomiarowy napięcia na panelach PV
+
 ![Voltage measure](images/Voltage_measurement.png "Pomiar napięcia")
 
-- Pomiar napięcia na panelu (kondensatorze buforującym) za pomocą dzielnika napięcia (1:76)
+- Pomiar napięcia na panelu (kondensatorze buforującym) za pomocą dzielnika napięcia (1:98,6)
+  - W miarę precyzyjny pomiar napięcia w zakresie 13V - 250V (zakładamy maks. napięcie 250V, natomiast poniżej napięcia 40V wyłączamy grzanie wody)
+  - Wartości rezystorów muszą być spore, aby nie płynęły duże prądy
+  - R1=976kOhm, R2=10kOhm
+  - Dla wejściowego napięcia Uwe=250V napięcie wyjściowe wynosi Uwy=2.535V (wg. symulacji)
 - Wzmacniacz typu RAIL-TO-RAIL w roli bufora napięciowego 
-- Filtr RC low-pass o fg=8.84Hz.
-- Dla wejściowego napięcia Uwe=250V napięcie wyjściowe wynosi Uwy=3.29V (wg. symulacji)
+- Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
+
 
 ## *Testy w rzeczywistości*
 
-Tutaj trzeba napisać coś mądrego o tym jak się zachowuje układ pomiarowy w rzeczywistości.
-- Jakie są odczyty z ESP32, a jakie z multimetru? (sprawdzić czy multimetr daje radę przy f=10kHz)
+**Testy przeprowadzimy na gotowym prototypie sterownika z dołączonymi panelami.**   
+Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidłowo przy f=10kHz
+
 
 ***
 
 ## **Pomiar prądu**
 
-Peak-detector   
-![Current measure](images/Current_measurement_PD.png "Pomiar prądu")
-
-Filtr RC   
+#### Filtr RC do pomiaru przebiegu napięcia z przetwornika prądu ACS712
 ![Current measure](images/Current_measurement_RC.png "Pomiar prądu")
 
 - Do pomiaru prądu wykorzystujemy czujnik [ACS712](https://www.sparkfun.com/datasheets/BreakoutBoards/0712.pdf)
   - [Link do sklepu](https://botland.com.pl/czujniki-pradu/14275-czujnik-pradu-acs712-20a-5903351242103.html)
-- **Dopóki nie ustalimy jak czujnik zachowuje się przy sygnale PWM (f=10kHz), zostajemy przy pomiarze za pomocą peak-detector'a**
+- Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
+- *ACS712 może mierzyć prąd płynący w obie strony. Dla prądu 0A na wyjściu ustawia 2,5V. Ponieważ ESP32 pracuje z logiką 3.3V podłączymy przetwornik prądu **'odwrotnie'** (0-20A -> 2,5 - 0,5V), dzięki temu nie przekroczymy wartości 3.3V na wejściu uC i będziemy pracować w liniowym zakresie przetwornika ADC. Dodatkowo jeśli prąd nie przekroczy 23A to nie wyjdziemy poza liniowy zakres ADC (<130mV)*
 
 ## *Testy w rzeczywistości*
 
-Tutaj trzeba napisać coś mądrego o tym jak się zachowuje układ pomiarowy w rzeczywistości.
-- Jakie są odczyty z ESP32, a jakie z multimetru? (sprawdzić czy multimetr daje radę przy f=10kHz)
-- Przetestować oba układy i je porównać
+Jak zachouje się ACS712 z ustalonym filtrem RC?
 
 ***
 
 ## **Pomiar Temperatury**
+
+- Temperatura wody w boilerze mierzona za pomocą czujnika [DS18B20](https://www.tme.eu/pl/details/df-dfr0198/czujniki-srodowiskowe/dfrobot/dfr0198/) w hermetycznej obudowie
+  - W celu zmniejszenia ryzyka błędnego odczytu (gdyby czujnik uległ uszkodzeniu) zastosowane zostaną dwa takie czujniki
+  - Montaż za pomocą wtyków GX12
+- Pomiar temperatury wewnątrz obudowy/radiatora również za pomocą DS18B20
 
 ***
 
