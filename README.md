@@ -1,4 +1,4 @@
-# PV_DC_driver
+# PV_DC_driver (IN PROGRESS)
 
 Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wyprowadzeń wzorów
 
@@ -134,7 +134,7 @@ Przetwornik ADC w ESP32 nie jest liniowy. Doświadczalnie ustalono, że do wynik
 - Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
 
 
-## *Testy w rzeczywistości*
+### *Testy w rzeczywistości*
 
 **Testy przeprowadzimy na gotowym prototypie sterownika z dołączonymi panelami.**   
 Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidłowo przy f=10kHz
@@ -152,7 +152,7 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
 - Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
 - *ACS712 może mierzyć prąd płynący w obie strony. Dla prądu 0A na wyjściu ustawia 2,5V. Ponieważ ESP32 pracuje z logiką 3.3V podłączymy przetwornik prądu **'odwrotnie'** (0-20A -> 2,5 - 0,5V), dzięki temu nie przekroczymy wartości 3.3V na wejściu uC i będziemy pracować w liniowym zakresie przetwornika ADC. Dodatkowo jeśli prąd nie przekroczy 23A to nie wyjdziemy poza liniowy zakres ADC (<130mV)*
 
-## *Testy w rzeczywistości*
+### *Testy w rzeczywistości*
 
 Jak zachouje się ACS712 z ustalonym filtrem RC?
 
