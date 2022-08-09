@@ -1,4 +1,4 @@
-# ESP32 ADC callibration tool [micropython]
+# ESP32 ADC calibration tool [micropython]
 
 ### Narzędzie służące do kalibracji przetwornika ADC w mikrokontrolerze ESP32 / ESP8266(nietestowane)
 
