@@ -119,7 +119,8 @@ Dzięki pomiarom napięcia i prądu poznamy moc z jaką pracuje grzałka. Do szu
 ![ADC characteristic](images/ESP32_ADC_characteristic.png "Charakterystyka ADC w ESP32")
 
 Przetwornik ADC w ESP32 nie jest liniowy. Doświadczalnie ustalono, że do wyniku pomiaru należy dodać 130mV (działa w zakresie 130mV - 2500mV)   
-**Należy wykonać kalibrację przetwornika ADC!!!**   
+**Należy wykonać kalibrację przetwornika ADC!!!**
+[Instrukcja kalibracji za pomocą narzędzia 'ESP32_ADC_calibration_tool'](https://github.com/PawelZieba01/PV_DC_driver/tree/main/tools/ESP32_ADC_calibration_tool)
 
 #### Układ pomiarowy napięcia na panelach PV
 
@@ -168,3 +169,5 @@ Jak zachouje się ACS712 z ustalonym filtrem RC?
 ***
 
 ## **Sterowanie**
+
+***
