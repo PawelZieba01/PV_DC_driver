@@ -12,13 +12,15 @@
 from machine import Pin, PWM, ADC
 from time import sleep
 
-## CONFIG ##
-adc_pin = 34
-pwm_pin = 21
-pwm_freq = 10000
-##--------##
 
-pot_pin = 35
+##----------------------------- CONFIG -----------------------------##
+
+adc_pin = 34         #Pin przetwornika ADC -> wyjście filtru RC
+pwm_pin = 21         #Pin PWM -> wejście filtru RC
+pwm_freq = 10000     #Częstotliwość sygnału PWM
+
+##------------------------------------------------------------------##
+
 
 adc = ADC(Pin(adc_pin))
 adc.atten(ADC.ATTN_11DB)           # Wybór tłumienia (zakresu ADC)
@@ -27,10 +29,6 @@ adc.width(ADC.WIDTH_10BIT)         # Wybór rozdzielczości ADC
 pwm = PWM(Pin(pwm_pin))
 pwm.freq(pwm_freq)
 pwm.duty(0)
-
-pot = ADC(Pin(pot_pin))
-pot.atten(ADC.ATTN_11DB)
-pot.width(ADC.WIDTH_10BIT)
 
 
 # Funkcja obliczająca różnicę na podstawie dopasowanej funkcji błędu,
@@ -79,16 +77,15 @@ def get_calibrate_data():
     
     
 def check_calculations():
-    sleep(5)
+    sleep(10)
     for i in range(1024):
         print("$" + str(calculate_adc_error(i)) + ";")
     
     
-## ------------------------------------------------------------------------------------------------ ##
+## ---------------------------------------------- PROGRAM ---------------------------------------------- ##
 
+get_calibrate_data()    #Zebranie danych do pliku .csv
+#check_calculations()     #Sprawdzenie czy znaleziona funkcja matematyczna działa poprawnie (wymaga programu serial_port_plotter)
 
-#get_calibrate_data()
-check_calculations()
-
-
+## ----------------------------------------------------------------------------------------------------- ##
 
