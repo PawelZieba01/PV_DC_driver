@@ -145,17 +145,29 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
 
 ## **Pomiar prądu**
 
-#### Filtr RC do pomiaru przebiegu napięcia z przetwornika prądu ACS712
-![Current measure](images/Current_measurement_RC.png "Pomiar prądu")
+> ### **W TRAKCIE TESTÓW**
+> #### Filtr RC do pomiaru przebiegu napięcia z przetwornika prądu ACS712
+> ![Current measurement](images/Current_measurement_RC.png "Pomiar prądu ACS712") 
+> - Do pomiaru prądu wykorzystujemy czujnik [ACS712](https://www.sparkfun.com/datasheets/BreakoutBoards/0712.pdf)
+>   - [Link do sklepu](https://botland.com.pl/czujniki-pradu/14275-czujnik-pradu-acs712-20a-5903351242103.html)
+> - Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
+> - *ACS712 może mierzyć prąd płynący w obie strony. Dla prądu 0A na wyjściu ustawia 2,5V. Ponieważ ESP32 pracuje z logiką 3.3V podłączymy przetwornik prądu **'odwrotnie'** (0-20A -> 2,5 - 0,5V), dzięki temu nie przekroczymy wartości 3.3V na wejściu uC i będziemy pracować w liniowym zakresie przetwornika ADC. Dodatkowo jeśli prąd nie przekroczy 23A to nie wyjdziemy poza liniowy zakres ADC (<130mV)*
 
-- Do pomiaru prądu wykorzystujemy czujnik [ACS712](https://www.sparkfun.com/datasheets/BreakoutBoards/0712.pdf)
-  - [Link do sklepu](https://botland.com.pl/czujniki-pradu/14275-czujnik-pradu-acs712-20a-5903351242103.html)
-- Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
-- *ACS712 może mierzyć prąd płynący w obie strony. Dla prądu 0A na wyjściu ustawia 2,5V. Ponieważ ESP32 pracuje z logiką 3.3V podłączymy przetwornik prądu **'odwrotnie'** (0-20A -> 2,5 - 0,5V), dzięki temu nie przekroczymy wartości 3.3V na wejściu uC i będziemy pracować w liniowym zakresie przetwornika ADC. Dodatkowo jeśli prąd nie przekroczy 23A to nie wyjdziemy poza liniowy zakres ADC (<130mV)*
+
+> ### **W TRAKCIE TESTÓW**   
+> ![Current measurement](images/Current_measurement_resistor.png "Pomiar prądu bocznik szeregowy")
+> - Do pomiaru prądu płynącego przez grzałkę, wykorzystamy rezystor 10mOhm w postaci bocznika szeregowego.
+> - Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
+> - Za pomocą wzmacniacza nieodwracającego wzmocnimy sygnał 10 razy i przesuniemy (oraz odwrócimy) sygnał o 0,5V w górę (2,5V - 0,5V  -->  0A - 20A), dzięki temu będziemy pracować w liniowym zakresie ADC.
 
 ### *Testy w rzeczywistości*
 
-Jak zachouje się ACS712 z ustalonym filtrem RC?
+- Pomiar prądu za pomocą układu ACS712 działa dużo lepiej przy częstotliwości PWM 3kHz (zamiast 10kHz)
+- Filtr RC (R=10kOhm, C=470nF) i kalibracja ADC działają przy f=3kHz
+- ACS712 testowany na płytce stykowej ma dużą czułość na zakłócenia zewnętrzne (w tym dotykanie go)
+- Uzyskana dokładność pomiaru (napięcie) ok. 100mV (ok. 1A)
+
+**Zaprojektowany zostanie obwód PCB z torami pomiarowymi (ACS712 i bocznik szeregowy) - okaże się, która metoda pomiaru jest będzie lepsza**
 
 ***
 
