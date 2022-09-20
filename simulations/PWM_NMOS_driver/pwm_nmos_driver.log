@@ -1,22 +1,21 @@
 Circuit: * D:\MojePliki\Git\PV_DC_driver\simulations\PWM_NMOS_driver\pwm_nmos_driver.asc
 
 Direct Newton iteration for .op point succeeded.
-Heightened Def Con from 5e-005 to 5e-005
 
-Date: Tue Aug 30 13:48:24 2022
-Total elapsed time: 0.188 seconds.
+Date: Tue Sep 20 21:19:50 2022
+Total elapsed time: 0.237 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 14130
-traniter = 14090
-tranpoints = 3758
-accept = 2779
-rejected = 980
-matrix size = 25
-fillins = 10
+totiter = 16684
+traniter = 16655
+tranpoints = 5013
+accept = 3860
+rejected = 1153
+matrix size = 30
+fillins = 8
 solver = Normal
-Matrix Compiler1: 2.16 KB object code size  0.3/0.2/[0.1]
-Matrix Compiler2: 2.18 KB object code size  0.2/0.3/[0.1]
+Matrix Compiler1: 2.54 KB object code size  0.4/0.2/[0.2]
+Matrix Compiler2: off  [0.2]/0.3/0.3
 

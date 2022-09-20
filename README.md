@@ -3,12 +3,13 @@
 Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wyprowadzeń wzorów
 
   1. [Funkcjonalności](#funkcjonalności)
-  2. [Obudowa](#obudowa)
-  3. [Sterowanie grzałką MPPT](#sterowanie-grzałką-mppt)
-  4. [Pomiar napięcia](#pomiar-napięcia)
-  5. [Pomiar prądu](#pomiar-prądu)
-  6. [Pomiar Temperatury](#pomiar-temperatury)
-  7. [Sterowanie](#sterowanie)
+  2. [Zasilanie](#zasilanie)
+  3. [Obudowa](#obudowa)
+  4. [Sterowanie grzałką MPPT](#sterowanie-grzałką-mppt)
+  5. [Pomiar napięcia](#pomiar-napięcia)
+  6. [Pomiar prądu](#pomiar-prądu)
+  7. [Pomiar Temperatury](#pomiar-temperatury)
+  8. [Sterowanie](#sterowanie)
 
 
 ***
@@ -16,6 +17,8 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
 ## **Funkcjonalności**
 
 - Sterowanie grzałką (włącz / wyłacz) --> MPPT PWM
+- Zasilanie 12V DC - zewnętrzny zasilacz
+- Maksymalne napięcie paneli PV: 250V
 - Pomiar napięcia
   - na panelu PV
   - na grzałce
@@ -31,6 +34,14 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
   - przez sieć LAN - strona www lub aplikacja
 - Zapis i wizualizacja danych na serwerze
 - Hermetyczna obudowa
+
+***
+
+## **Zasilanie**
+
+Sterownik będzie zasilany z zewnętrznego źródła napięcia 12V DC min. 1A. Zabezpieczenie w postaci bezpiecznika topikowego średniozwłoczngo 800mA 5x20mm.
+- [Zasilacz](https://www.tme.eu/pl/details/posc12100a/zasilacze-wtyczkowe/pos/)
+- [Bezpiecznik](https://www.tme.eu/pl/details/zkm-0.8a/bezpieczniki-5x20mm-sredniozwloczne/eska/521-016/)
 
 ***
 
@@ -110,6 +121,12 @@ Dzięki pomiarom napięcia i prądu poznamy moc z jaką pracuje grzałka. Do szu
   - Dwa równolegle połączone tranzystory N-mosfet [WMJ25N80M3](https://www.tme.eu/pl/details/wmj25n80m3-cyg/tranzystory-z-kanalem-n-tht/wayon/wmj25n80m3/)
   - Izolacja galwaniczna za pomocą transoptora
   - Napięcie sterowania 12V
+
+#### Sterownik tranzystora N-mosfet
+
+Aby zapewnić możliwie szybkie przełączanie klucza tranzystorowego, wykorzystamy bufor / wzmacniacz prądowy , który zapewni dostatecznie wysoki prąd ładowania bramki. Dodatkowy stopień z tranzystorem Q3 służy do odwrócenia sygnału (logiczna '1' -> klucz włączony)
+
+![MPPT heater driver](images/N-mosfet_driver.png "Sterownik tranzystora N-mosfet")
 
 ***
 
