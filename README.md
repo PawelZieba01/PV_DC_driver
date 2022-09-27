@@ -119,7 +119,7 @@ Dzięki pomiarom napięcia i prądu poznamy moc z jaką pracuje grzałka. Do szu
 
 - Klucz tranzystorowy
   - Dwa równolegle połączone tranzystory N-mosfet [WMJ25N80M3](https://www.tme.eu/pl/details/wmj25n80m3-cyg/tranzystory-z-kanalem-n-tht/wayon/wmj25n80m3/)
-  - ~~ Izolacja galwaniczna za pomocą transoptora ~~
+  - ~~Izolacja galwaniczna za pomocą transoptora~~
   - Napięcie sterowania 12V
   - Sterownik N-mosfet zbudowany z tranzystorów bipolarnych
 
