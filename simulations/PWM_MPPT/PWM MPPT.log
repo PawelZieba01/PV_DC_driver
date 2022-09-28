@@ -11,20 +11,20 @@ WARNING: Less than two connections to node NC_04.  This node is used by S2.
 WARNING: Less than two connections to node NC_05.  This node is used by V1.
 Direct Newton iteration for .op point succeeded.
 
-Date: Mon Aug 29 17:37:03 2022
-Total elapsed time: 0.896 seconds.
+Date: Wed Sep 28 19:49:15 2022
+Total elapsed time: 1.089 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 262798
-traniter = 262767
-tranpoints = 78281
-accept = 59345
-rejected = 18936
-matrix size = 39
+totiter = 287444
+traniter = 287413
+tranpoints = 87724
+accept = 67445
+rejected = 20279
+matrix size = 42
 fillins = 9
 solver = Normal
-Matrix Compiler1: 2.33 KB object code size  0.4/0.3/[0.2]
-Matrix Compiler2: 3.00 KB object code size  0.2/0.3/[0.2]
+Matrix Compiler1: 2.49 KB object code size  0.4/0.3/[0.2]
+Matrix Compiler2: off  [0.2]/0.4/0.3
 
