@@ -26,7 +26,7 @@ Progam ma za zadanie poszukiwanie w czasie rzeczywistym maksymalnego punktu prac
 w celu uzyskania jak najwyższej mocy na grzałce w zasobniku wody, włączanie i wyłączanie grzałki i kilka 
 mniejszych funkcjonalności. Napisany zostanie w języku Python.
 
-- Wymagania względem programu:
+Wymagania względem programu:
   - pomiar temperatury wody w zasobniku
   - pomiar napięcia
   - pomiar prądu
@@ -38,7 +38,7 @@ mniejszych funkcjonalności. Napisany zostanie w języku Python.
   - obsługa buzzera(ALARM)
   - zapis do pamięci sumy dostarczonej energii(kWh)
 
-- Szczegółowe wymagania:
+Szczegółowe wymagania:
   - temperatura bezpieczna <95 *C, powyżej 95 *C uruchamia się alarm
   - możliwość ustawiania temperatury do 95 *C
   - zapis do pamięci całkowitej mocy odbywa się w interwałąch czasu(raz na godzinę(w celu ochrony pamięci przed degradacją)) 
