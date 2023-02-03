@@ -32,9 +32,9 @@ while True:
     if global_time % 100 == 0:
         set_temperature = change_temp_factor(set_temperature)
         if but0.value() == 0 or but1.value() == 0:
-            LCD_handling("Maksymalna dozwolona","temperatura wody:",str(set_temperature)+chr(223)+"C","")
+            LCD_handling("Maksymalna dozwolona","temperatura wody:","",str(set_temperature)+chr(223)+"C    ")
         else:
-            LCD_handling("Status:"+" "+str(global_time), "Temp: "+str(water_temperature)+" "+ chr(223)+"C", set_temperature, "chleb")
+            LCD_handling("Status:"+" "+str(global_time), "Temp: "+str(water_temperature)+" "+ chr(223)+"C   ", set_temperature, "chleb")
             
     
             
