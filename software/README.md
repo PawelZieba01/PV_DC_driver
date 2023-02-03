@@ -26,7 +26,7 @@ Progam ma za zadanie poszukiwanie w czasie rzeczywistym maksymalnego punktu prac
 w celu uzyskania jak najwyższej mocy na grzałce w zasobniku wody, włączanie i wyłączanie grzałki i kilka 
 mniejszych funkcjonalności. Napisany zostanie w języku Python.
 
-Wymagania względem programu:
+- Wymagania względem programu:
   - pomiar temperatury wody w zasobniku
   - pomiar napięcia
   - pomiar prądu
@@ -38,7 +38,8 @@ Wymagania względem programu:
   - obsługa buzzera(ALARM)
   - zapis do pamięci sumy dostarczonej energii(kWh)
 
-Szczegółowe wymagania:
+- Szczegółowe wymagania:
+  - gdy temperatura w zbiorniku osiągnie zadaną, program przechodzi w stan "STOP"
   - temperatura bezpieczna <95 *C, powyżej 95 *C uruchamia się alarm
   - możliwość ustawiania temperatury do 95 *C
   - zapis do pamięci całkowitej mocy odbywa się w interwałąch czasu(raz na godzinę(w celu ochrony pamięci przed degradacją)) 
@@ -49,7 +50,7 @@ Szczegółowe wymagania:
   - ERROR zatrzymuje program całkowicie, wymagany będzie reset
   - błędy powodujące wejście w stan ERROR:
     - napięcie wynosi 0, ale płynie prąd
-    - współczynnik wypełnienia != 0, nie płynie prąd
+    - napięcie > 0, współczynnik wypełnienia != 0, nie płynie prąd
     - temperatura wynosi więcej niż 99*C
     - i coś tam jeszcze pewnie po drodze wpadnie
 	
@@ -59,19 +60,17 @@ status programu, obsługa błędów, zapis do pamięci, buzzer). Rdzenie będą 
 zmiennych globalnych. Nad wszystkim będzie czuwał timer odpowiadający za globalny czas programu. 
 Wykorzystany zostanie Watchdog.
 
-Zmienne globalne:
+- Zmienne globalne:
   - fill_value
   - voltage_value
   - current_value
   - power_value
-  - voltage_value
-  - current_value
   - water_temperature
   - set_tempereture
   - global_time
   - program_status_flag
 
-Funkcje(zdefiniowane w modułach):  
+- Funkcje(zdefiniowane w modułach):  
   - temperature_handling() => obsługa przycisków od zmiany temperatury (w zakersie 20-99*C), odczyt temperatury
   - power_calculation() => pomiar napięcia, prądu, mocy
   - MPPT_algorithm() => obliczanie MPPT
@@ -84,6 +83,7 @@ Funkcje(zdefiniowane w modułach):
   - status_LED() => obsługa status_LEDa
 
 Struktura:
+```python
 ===================================main.py====================================
 ===================================IMPORT=====================================
 import...
@@ -93,6 +93,8 @@ np. adc
 
 ========================INICJALIZACJA_ZMIENNYCH_GLOBALNYCH====================
 global fill_value
+global voltage_value
+global current_value
 global power_value
 global water_temperature
 global set_tempereture
@@ -135,3 +137,4 @@ _thread.start_new_thread(thread0, ())
 _thread.start_new_thread(thread1, ())
 
 ===================================main.py====================================
+```
