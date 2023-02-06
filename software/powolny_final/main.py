@@ -9,9 +9,6 @@ from machine import Timer, Pin, freq
 #========================================================================================================
 freq(240000000)
 
-but0 = Pin(14, Pin.IN, Pin.PULL_UP)
-but1 = Pin(27, Pin.IN, Pin.PULL_UP)
-
 global_time = 0
 set_temperature = 50
 water_temperature = 0.0

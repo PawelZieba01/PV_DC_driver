@@ -3,13 +3,12 @@ from lcd_api import LcdApi
 from i2c_lcd import I2cLcd
 
 i2c = SoftI2C(scl=Pin(22), sda=Pin(21), freq=10000)     #initializing the I2C method for ESP32
-but0 = Pin(14, Pin.IN, Pin.PULL_UP)
-but1 = Pin(27, Pin.IN, Pin.PULL_UP)
 
 I2C_ADDR = 0x27
 totalRows = 4
 totalColumns = 20
 prstr0 = ""
+prtemp = 0
 
 lcd = I2cLcd(i2c, I2C_ADDR, totalRows, totalColumns)
 
@@ -41,12 +40,16 @@ def LCD_handling(row0, row1, row2, row3):
     prstr0 = row0
 
 def display(water_temperature, set_temperature, program_status, global_time):
+    global prtemp
+    
     if program_status == 0:
         program_status = "praca"
     elif program_status == 1:
         program_status = "STOP"
     
-    if but0.value() == 0 or but1.value() == 0:
+    if prtemp != set_temperature:
         LCD_handling("Maksymalna dozwolona","temperatura wody: "," ",str(set_temperature)+" "+chr(223)+"C    ")
     else:
         LCD_handling("Status:"+" "+str(program_status), "Temp: "+str(water_temperature)+" "+ chr(223)+"C   ", "Set temp: "+str(set_temperature)+" "+chr(223)+"C ", "Gtime: "+str(global_time))
+        
+    prtemp = set_temperature
