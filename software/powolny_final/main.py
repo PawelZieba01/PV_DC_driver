@@ -1,4 +1,4 @@
-import _thread, esp32
+import _thread
 from display_handling import display
 from temp_api import read_ds_sensor, change_temp_factor
 from output_api import output_state
@@ -39,6 +39,3 @@ while True:
         display(water_temperature, set_temperature, program_status, global_time)
     if global_time % 43 == 0:
         program_status = output_state(water_temperature, set_temperature)
-    
-            
-    

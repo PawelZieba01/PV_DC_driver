@@ -1,6 +1,8 @@
 from machine import Pin
 
-led_output = Pin(5,Pin.OUT)
+red_output = Pin(5,Pin.OUT)
+green_output = Pin(18,Pin.OUT)
+
 
 program_status = 0
 
@@ -13,8 +15,10 @@ def output_state(water_temperature, set_temperature):
         program_status = 0
     
     if program_status == 1:
-        led_output.value(1)
+        red_output.value(1)
+        green_output.value(1)
     else:
-        led_output.value(0)
+        red_output.value(0)
+        green_output.value(1)
         
     return program_status
