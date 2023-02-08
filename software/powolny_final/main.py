@@ -5,8 +5,8 @@ from output_api import output_state
 from time import sleep
 from machine import Timer, Pin, freq
 
-
 #========================================================================================================
+
 freq(240000000)
 
 global_time = 0
@@ -15,15 +15,15 @@ water_temperature = 0.0
 program_status = 0
 
 #=========================================================================================================
+
 def global_time_inc(Timer):
     global global_time
     global_time += 1
-
+    
 global_timer = Timer(1)
 global_timer.init(period=10, mode=Timer.PERIODIC, callback=global_time_inc)
-#==========================================================================================================
 
-result_temp = [set_temperature ,water_temperature]
+#==========================================================================================================
 
 def thread0():
     while True:
