@@ -1,4 +1,4 @@
-from machine import Pin, SoftI2C,
+from machine import Pin, SoftI2C
 from lcd_api import LcdApi
 from i2c_lcd import I2cLcd
 
@@ -39,7 +39,7 @@ def LCD_handling(row0, row1, row2, row3):
     
     prstr0 = row0
 
-def display(water_temperature, set_temperature, program_status, current_value):
+def display(water_temperature, set_temperature, program_status, power_value, total_power_value):
     global prtemp
     
     if program_status == 0:
@@ -50,6 +50,6 @@ def display(water_temperature, set_temperature, program_status, current_value):
     if prtemp != set_temperature:
         LCD_handling("Maksymalna dozwolona","temperatura wody: "," ",str(set_temperature)+" "+chr(223)+"C    ")
     else:
-        LCD_handling("Status:"+" "+str(program_status), "Temp: "+str(water_temperature)+" "+ chr(223)+"C   ", "Current: "+str(current_value)+" A   ", "Set temp: "+str(set_temperature)+" "+chr(223)+"C ")
+        LCD_handling("Status:"+" "+str(program_status), "Temp: "+str(water_temperature)+" "+ chr(223)+"C   ", "Moc: "+str(power_value)+" W   ", "Ptot: "+str(round(total_power_value, 2))+" kWh   " )
         
     prtemp = set_temperature
