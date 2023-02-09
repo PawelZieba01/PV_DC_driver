@@ -43,12 +43,14 @@ def display(water_temperature, set_temperature, program_status, power_value, tot
     global prtemp
     
     if program_status == 0:
-        program_status = "praca"
+        program_status = "PRACA"
     elif program_status == 1:
         program_status = "STOP"
+    elif program_status == 2:
+        program_status = "ERROR"
     
     if prtemp != set_temperature:
-        LCD_handling("Maksymalna dozwolona","temperatura wody: "," ",str(set_temperature)+" "+chr(223)+"C    ")
+        LCD_handling("Maksymalna dozwolona", "temperatura wody: "," ",str(set_temperature)+" "+chr(223)+"C    ")
     else:
         LCD_handling("Status:"+" "+str(program_status), "Temp: "+str(water_temperature)+" "+ chr(223)+"C   ", "Moc: "+str(power_value)+" W   ", "Ptot: "+str(round(total_power_value, 2))+" kWh   " )
         
