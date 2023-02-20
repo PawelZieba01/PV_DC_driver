@@ -164,7 +164,7 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
 ## **Pomiar prądu**
 
 > ### **W TRAKCIE TESTÓW**
-> #### Filtr RC do pomiaru przebiegu napięcia z przetwornika prądu ACS712
+> #### Tor pomiarowy prądu - **ACS712**
 > ![Current measurement](images/Current_measurement_RC.png "Pomiar prądu ACS712") 
 > - Do pomiaru prądu wykorzystujemy czujnik [ACS712](https://www.sparkfun.com/datasheets/BreakoutBoards/0712.pdf)
 >   - [Link do sklepu](https://botland.com.pl/czujniki-pradu/14275-czujnik-pradu-acs712-20a-5903351242103.html)
@@ -173,10 +173,12 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
 
 
 > ### **W TRAKCIE TESTÓW**   
+> #### Tor pomiarowy prądu - **bocznik 10mOhm**
 > ![Current measurement](images/Current_measurement_resistor.png "Pomiar prądu bocznik szeregowy")
 > - Do pomiaru prądu płynącego przez grzałkę, wykorzystamy rezystor 10mOhm w postaci bocznika szeregowego.
 > - Filtr RC low-pass o fg=33.86Hz (R=10kOhm, C=470nF)
 > - Za pomocą wzmacniacza nieodwracającego wzmocnimy sygnał 10 razy i przesuniemy (oraz odwrócimy) sygnał o 0,5V w górę (2,5V - 0,5V  -->  0A - 20A), dzięki temu będziemy pracować w liniowym zakresie ADC.
+> - Dodano stopień zabezpieczający (R14, D3, D4) przed wysokim napięciem na wejściu pierwszego wzmacniacza operacyjnego (w przypadku przepalenia rezystora pomiarowego, na wejściu wzm.op. pojawia się napięcie z paneli PV)
 
 ### *Testy w rzeczywistości*
 
@@ -185,7 +187,8 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
 - ACS712 testowany na płytce stykowej ma dużą czułość na zakłócenia zewnętrzne (w tym dotykanie go)
 - Uzyskana dokładność pomiaru (napięcie) ok. 100mV (ok. 1A)
 
-**Zaprojektowany zostanie obwód PCB z torami pomiarowymi (ACS712 i bocznik szeregowy) - okaże się, która metoda pomiaru jest będzie lepsza**
+- **Budowa prototypu toru pomiarowego na boczniku 10mOhm w trakcie. Sprawdzimy jak zachowuje się układ i z jaką dokładnością mierzy przepływający prąd.**
+
 
 ***
 
