@@ -10,6 +10,7 @@ Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wy
   6. [Pomiar prądu](#pomiar-prądu)
   7. [Pomiar Temperatury](#pomiar-temperatury)
   8. [Sterowanie](#sterowanie)
+  9. [Pinout](#esp32-pinout)
 
 
 ***
@@ -190,7 +191,11 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
 - **Budowa prototypu toru pomiarowego na boczniku 10mOhm w trakcie. Sprawdzimy jak zachowuje się układ i z jaką dokładnością mierzy przepływający prąd.**
 
 
+
+
 ***
+
+
 
 ## **Pomiar Temperatury**
 
@@ -199,8 +204,21 @@ Na ten moment wiadomo, że filtr RC (R=10kOhm, C=470nF) zachowuje się prawidło
   - Montaż za pomocą wtyków GX12
 - Pomiar temperatury wewnątrz obudowy/radiatora również za pomocą DS18B20
 
+
+
 ***
 
+
+
 ## **Sterowanie**
+
+
+
+***
+
+
+## ESP32 Pinout
+
+![ESP32 Pinout](images/ESP32_pinout.png "ESP32 Pinout") 
 
 ***
