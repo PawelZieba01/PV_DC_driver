@@ -15,7 +15,7 @@ from time import sleep
 
 ##----------------------------- CONFIG -----------------------------##
 
-adc_pin = 39         #Pin przetwornika ADC -> wyjście filtru RC
+adc_pin = 33         #Pin przetwornika ADC -> wyjście filtru RC
 pwm_pin = 23         #Pin PWM -> wejście filtru RC
 pwm_freq = 10000     #Częstotliwość sygnału PWM
 
@@ -35,15 +35,11 @@ pwm.duty(0)
 # należy zmodyfikować wg. arkusza excel i przekopiować do docelowego programu :)
 ## -------------------------------------------------------------------------------- ##
 def calculate_adc_error(adc_value):
-    
-    
-    return (23.7
-            +  (0.0767 * adc_value)
-            +  (-0.000325 * adc_value * adc_value)
-            +  (0.000000477 * adc_value * adc_value * adc_value)
-            +  (-0.000000000291 * adc_value * adc_value * adc_value * adc_value))
-   
-   #return adc_value
+    return (21.7
+            +  (0.267 * adc_value)
+            +  (-0.00103 * adc_value * adc_value)
+            +  (0.00000172 * adc_value * adc_value * adc_value)
+            +  (-0.00000000102 * adc_value * adc_value * adc_value * adc_value))
 ## -------------------------------------------------------------------------------- ##
 
 
@@ -92,5 +88,3 @@ def check_calculations():
 check_calculations()     #Sprawdzenie czy znaleziona funkcja matematyczna działa poprawnie (wymaga programu serial_port_plotter)
 
 ## ----------------------------------------------------------------------------------------------------- ##
-            
-    

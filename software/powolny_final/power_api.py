@@ -9,18 +9,18 @@ voltage.atten(ADC.ATTN_11DB)
 voltage.width(ADC.WIDTH_10BIT)         
 
 def calculate_current_adc_error(adc_value):
-    return (24.4
-            +  (0.0696 * adc_value)
-            +  (-0.000288 * adc_value * adc_value)
-            +  (0.000000415 * adc_value * adc_value * adc_value)
-            +  (-0.00000000026 * adc_value * adc_value * adc_value * adc_value))
+    return (21.7
+            +  (0.267 * adc_value)
+            +  (-0.00103 * adc_value * adc_value)
+            +  (0.00000172 * adc_value * adc_value * adc_value)
+            +  (-0.00000000102 * adc_value * adc_value * adc_value * adc_value))
 
 def calculate_voltage_adc_error(adc_value):
-    return (24.2
-            +  (0.0646 * adc_value)
-            +  (-0.000267 * adc_value * adc_value)
-            +  (0.000000385 * adc_value * adc_value * adc_value)
-            +  (-0.000000000246 * adc_value * adc_value * adc_value * adc_value))
+    return (21.7
+            +  (0.267 * adc_value)
+            +  (-0.00103 * adc_value * adc_value)
+            +  (0.00000172 * adc_value * adc_value * adc_value)
+            +  (-0.00000000102 * adc_value * adc_value * adc_value * adc_value))
 
 def current_calculation():
     global current

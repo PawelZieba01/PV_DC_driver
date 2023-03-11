@@ -35,11 +35,11 @@ pwm.duty(0)
 # należy zmodyfikować wg. arkusza excel i przekopiować do docelowego programu :)
 ## -------------------------------------------------------------------------------- ##
 def calculate_adc_error(adc_value):
-    return (23.8
-            +  (0.0744 * adc_value)
-            +  (-0.000328 * adc_value * adc_value)
-            +  (0.000000482 * adc_value * adc_value * adc_value)
-            +  (-0.000000000293 * adc_value * adc_value * adc_value * adc_value))
+    return (21.7
+            +  (0.267 * adc_value)
+            +  (-0.00103 * adc_value * adc_value)
+            +  (0.00000172 * adc_value * adc_value * adc_value)
+            +  (-0.00000000102 * adc_value * adc_value * adc_value * adc_value))
 ## -------------------------------------------------------------------------------- ##
 
 
@@ -84,11 +84,7 @@ def check_calculations():
     
 ## ---------------------------------------------- PROGRAM ---------------------------------------------- ##
 
-get_calibrate_data()    #Zebranie danych do pliku .csv
-#check_calculations()     #Sprawdzenie czy znaleziona funkcja matematyczna działa poprawnie (wymaga programu serial_port_plotter)
+#get_calibrate_data()    #Zebranie danych do pliku .csv
+check_calculations()     #Sprawdzenie czy znaleziona funkcja matematyczna działa poprawnie (wymaga programu serial_port_plotter)
 
 ## ----------------------------------------------------------------------------------------------------- ##
-
-    
-            
-    

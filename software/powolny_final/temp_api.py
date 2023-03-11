@@ -36,7 +36,7 @@ def read_ds_sensor():
         if isinstance(temp, float):
             temp = round(temp, 2)
             water_temperature  = temp
-    sleep_ms(9) 
+    sleep_ms(20) 
    
     return water_temperature
 
