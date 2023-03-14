@@ -7,6 +7,7 @@ decrement_button = Pin(27, Pin.IN, Pin.PULL_UP)
 ds_pin = Pin(4)
 ds_sensor = ds18x20.DS18X20(onewire.OneWire(ds_pin))
 
+water_temperature = 0
 but_flag = 0 #if 0 enable, if 1 locked
 
 def change_temp_factor(set_temperature):
@@ -17,11 +18,11 @@ def change_temp_factor(set_temperature):
     
     if but1_val == 0 and but_flag == 0:
         but_flag = 1
-        if set_temperature < 95:
+        if set_temperature < 90:
             set_temperature += 1
     elif but2_val == 0 and but_flag == 0:
         but_flag = 1
-        if set_temperature > 0:
+        if set_temperature > 10:
             set_temperature -= 1
     elif but1_val == 1 and but2_val == 1:
         but_flag = 0
@@ -30,14 +31,20 @@ def change_temp_factor(set_temperature):
         
 def read_ds_sensor():
     roms = ds_sensor.scan()
-    ds_sensor.convert_temp()
-    for rom in roms:
-        temp = ds_sensor.read_temp(rom)
-        if isinstance(temp, float):
-            temp = round(temp, 2)
-            water_temperature  = temp
-    sleep_ms(20) 
-   
+    try:
+        ds_sensor.convert_temp()
+        sleep_ms(20)
+        
+        for rom in roms:
+            temp = ds_sensor.read_temp(rom)
+            if isinstance(temp, float):
+                temp = round(temp, 2)
+                water_temperature  = temp
+            
+    except onewire.OneWireError:
+        sleep_ms(20)
+        water_temperature = 0
+        
     return water_temperature
 
  

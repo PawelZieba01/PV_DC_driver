@@ -37,7 +37,7 @@ def voltage_calculation():
     actual_voltage = voltage.read()
     voltage_value = round(actual_voltage + calculate_voltage_adc_error(actual_voltage))
     
-    return voltage_value * 0.3473684
+    return voltage_value * 0.3203684
     
 def power_calculation():
     current_value = current_calculation()

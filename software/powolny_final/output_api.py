@@ -8,12 +8,14 @@ program_status = 0
 def status_handling(water_temperature, set_temperature):
     global program_status
     
-    if water_temperature <= set_temperature - 3:
+    if water_temperature <= set_temperature - 3 and water_temperature > 9:
         program_status = 0
     elif water_temperature >= set_temperature and water_temperature < 96:
         program_status = 1
     elif water_temperature > 96:
         program_status = 2
+    elif water_temperature == 0:
+        program_status = 1
 
 def output_state(water_temperature, set_temperature):
     global program_status
