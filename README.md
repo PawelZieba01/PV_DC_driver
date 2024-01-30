@@ -1,6 +1,10 @@
+Autorzy:
+Hardware - Paweł Z.
+Software - Arkadiusz K.
+
 # PV_DC_driver (IN PROGRESS)
 
-Sterownik do instalacji PV ogrzewającej zasobnik CWU - zarys teoretyczny bez wyprowadzeń wzorów
+Sterownik do instalacji PV ogrzewającej zasobnik CWU. Projekt w fazie rozwoju i pierwszych testów.
 
   1. [Funkcjonalności](#funkcjonalności)
   2. [Zasilanie](#zasilanie)
